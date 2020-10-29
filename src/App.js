@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import 'antd/dist/antd.css';
+import {Divider} from 'antd'
+import HomePage from "./pages/homePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Divider orientation="left">
+            <Link to="/">
+                <img className="logo" src="https://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG7.png"/>
+            </Link>
+        </Divider>
+        <Switch>
+            <Route path="/planets/:planetsId">
+                <Planet />
+            </Route>
+
+            <Route path="/">
+                <HomePage />
+            </Route>
+
+        </Switch>
+
+
+
+    </Router>
   );
 }
 
