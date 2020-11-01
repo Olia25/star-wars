@@ -9,8 +9,9 @@ import {
 import 'antd/dist/antd.css';
 import {Divider} from 'antd'
 import HomePage from "./pages/homePage";
+import Planet from "./pages/Planet";
 
-function App() {
+const App = () => {
   return (
     <Router>
         <Divider orientation="left">
@@ -26,11 +27,7 @@ function App() {
             <Route path="/">
                 <HomePage />
             </Route>
-
         </Switch>
-
-
-
     </Router>
   );
 }
